@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Stress & Treatment Predictor - AI Powered</title>
+    <meta name="description" content="Advanced AI-powered mental health assessment with personalized treatment recommendations">
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-gradient"></div>
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-brain"></i>
+                <span>MindCare AI</span>
+            </div>
+            <div class="nav-links">
+                <a href="#assessment" class="nav-link">Assessment</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">AI-Powered Mental Health</span>
+                    <br>Assessment & Treatment
+                </h1>
+                <p class="hero-description">
+                    Advanced machine learning algorithms provide personalized mental health insights 
+                    and evidence-based treatment recommendations tailored to your unique profile.
+                </p>
+                <button class="cta-button" onclick="scrollToAssessment()">
+                    <span>Start Assessment</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Section -->
+    <section id="assessment" class="assessment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mental Health Assessment</h2>
+                <p class="section-subtitle">Complete this comprehensive evaluation to receive personalized insights</p>
+            </div>
+
+            <div class="form-container">
+                <!-- Progress Indicator -->
+                <div class="progress-indicator">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span>Personal Info</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span>Work Environment</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span>Health & Support</span>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-circle">4</div>
+                        <span>Social & Interview</span>
+                    </div>
+                </div>
+
+                <form id="predictForm" class="assessment-form">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" id="step-1">
+                        <div class="step-header">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <p>Let's start with some basic information about you</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="10" max="100" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="family_history">Family History of Mental Health Issues</label>
+                            <select id="family_history" name="family_history" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Work Environment -->
+                    <div class="form-step" id="step-2">
+                        <div class="step-header">
+                            <h3><i class="fas fa-briefcase"></i> Work Environment</h3>
+                            <p>Tell us about your work situation and environment</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="self_employed">Self Employed</label>
+                            <select id="self_employed" name="self_employed" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="work_interfere">Work Interference with Mental Health</label>
+                            <select id="work_interfere" name="work_interfere" required>
+                                <option value="">Select Option</option>
+                                <option value="never">Never</option>
+                                <option value="rarely">Rarely</option>
+                                <option value="sometimes">Sometimes</option>
+                                <option value="often">Often</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="no_employees">Number of Employees</label>
+                            <select id="no_employees" name="no_employees" required>
+                                <option value="">Select Range</option>
+                                <option value="1-5">1-5</option>
+                                <option value="6-25">6-25</option>
+                                <option value="26-100">26-100</option>
+                                <option value="100-500">100-500</option>
+                                <option value="500-1000">500-1000</option>
+                                <option value="more than 1000">More than 1000</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="remote_work">Remote Work</label>
+                            <select id="remote_work" name="remote_work" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tech_company">Tech Company</label>
+                            <select id="tech_company" name="tech_company" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Health History & Company Support -->
+                    <div class="form-step" id="step-3">
+                        <div class="step-header">
+                            <h3><i class="fas fa-heartbeat"></i> Health History & Company Support</h3>
+                            <p>Information about your health and workplace support</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mental_health_consequence">Mental Health Consequences at Work</label>
+                            <select id="mental_health_consequence" name="mental_health_consequence" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="maybe">Maybe</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phys_health_consequence">Physical Health Consequences at Work</label>
+                            <select id="phys_health_consequence" name="phys_health_consequence" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="maybe">Maybe</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="benefits">Mental Health Benefits</label>
+                            <select id="benefits" name="benefits" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="don't know">Don't Know</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="care_options">Care Options Available</label>
+                            <select id="care_options" name="care_options" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="not sure">Not Sure</option>
+                                <option value="don't know">Don't Know</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wellness_program">Wellness Program</label>
+                            <select id="wellness_program" name="wellness_program" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="don't know">Don't Know</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="seek_help">Seek Help Resources</label>
+                            <select id="seek_help" name="seek_help" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="don't know">Don't Know</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="anonymity">Anonymity Protected</label>
+                            <select id="anonymity" name="anonymity" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="don't know">Don't Know</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="leave">Ease of Taking Mental Health Leave</label>
+                            <select id="leave" name="leave" required>
+                                <option value="">Select Option</option>
+                                <option value="very easy">Very Easy</option>
+                                <option value="easy">Easy</option>
+                                <option value="somewhat difficult">Somewhat Difficult</option>
+                                <option value="very difficult">Very Difficult</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Social Environment & Interview -->
+                    <div class="form-step" id="step-4">
+                        <div class="step-header">
+                            <h3><i class="fas fa-users"></i> Social Environment & Interview Concerns</h3>
+                            <p>Final questions about social interactions and interviews</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="coworkers">Comfortable Discussing with Coworkers</label>
+                            <select id="coworkers" name="coworkers" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="some of them">Some of Them</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supervisor">Comfortable Discussing with Supervisor</label>
+                            <select id="supervisor" name="supervisor" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="some of them">Some of Them</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mental_health_interview">Discuss Mental Health in Interview</label>
+                            <select id="mental_health_interview" name="mental_health_interview" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="maybe">Maybe</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phys_health_interview">Discuss Physical Health in Interview</label>
+                            <select id="phys_health_interview" name="phys_health_interview" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="maybe">Maybe</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mental_vs_physical">Mental vs Physical Health Treated Equally</label>
+                            <select id="mental_vs_physical" name="mental_vs_physical" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="don't know">Don't Know</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="obs_consequence">Observed Negative Consequences</label>
+                            <select id="obs_consequence" name="obs_consequence" required>
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="form-navigation">
+                        <button type="button" class="nav-button prev-button" id="prevButton" style="display: none;">
+                            <i class="fas fa-arrow-left"></i>
+                            Previous
+                        </button>
+                        <button type="button" class="nav-button next-button" id="nextButton">
+                            Next
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button type="submit" class="submit-button" id="submitButton" style="display: none;">
+                            <span class="button-text">Analyze Mental Health</span>
+                            <div class="button-loader">
+                                <div class="spinner"></div>
+                            </div>
+                            <i class="fas fa-brain button-icon"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-animation">
+                <div class="loading-brain">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="loading-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <h3>Analyzing Your Mental Health Profile</h3>
+            <p>Our AI is processing your responses...</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results" class="results-section">
+        <div class="container">
+            <div class="results-header">
+                <h2>Your Mental Health Assessment Results</h2>
+                <div class="results-actions">
+                    <button class="action-button" onclick="downloadResults()">
+                        <i class="fas fa-download"></i>
+                        Download Report
+                    </button>
+                    <button class="action-button" onclick="shareResults()">
+                        <i class="fas fa-share"></i>
+                        Share Results
+                    </button>
+                    <button class="action-button" onclick="printResults()">
+                        <i class="fas fa-print"></i>
+                        Print Report
+                    </button>
+                </div>
+            </div>
+            
+            <div id="resultContent" class="result-content">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </div>
+
+        <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">Learn more about our mission and vision</p>
+            </div>
+            <div class="about-content">
+                <p>At MindCare AI, we are dedicated to improving mental health through advanced technology. Our AI-powered platform provides personalized assessments and treatment recommendations to help individuals understand their mental health better.</p>
+                <p>We believe that everyone deserves access to mental health resources and support. Our mission is to empower individuals with the knowledge and tools they need to take charge of their mental well-being.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch with us for any inquiries</p>
+            </div>
+            <div class="contact-content">
+                <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+                <ul>
+                    <li><span>Email:</span> support@mindcareai.com</li>
+                    <li><span>Phone:</span> +1 (123) 456-7890</li>
+                    <li><span>Address:</span> 123 Mental Health St, Wellness City, CA 12345</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../static/script.js"></script>
+</body>
+</html>

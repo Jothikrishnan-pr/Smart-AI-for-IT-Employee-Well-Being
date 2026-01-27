@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / Editor
+.DS_Store
+.vscode/
+
+# Model & data files (remove if you want to track them)
+*.pkl
+*.zip
+*.csv
